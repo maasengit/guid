@@ -60,8 +60,23 @@ guid生成的ID包括6个部分：
 2. 集群环境下启动时需要执行以下两个脚本文件：
 
 src/main/resources/start_guid.sh：根据IP地址设置集群里所有机器的ID
+```
+export GUID_DATACENTER_ID=1
+export IP_192_168_1_100_GUID_WORKER_ID=1
+export IP_192_168_1_101_GUID_WORKER_ID=2
+```
 
 src/main/resources/start.sh：集群机器启动脚本，根据本机IP地址从start_guid.sh获得机器ID设置为环境变量
+```
+BASEDIR=$(cd "$(dirname "$0")"; pwd)
+
+if [ -f "${BASEDIR}/start_guid.sh" ];then
+. ${BASEDIR}/start_guid.sh
+IP_ADDRESS=`hostname -i`
+GUID_WORKER_ID_NAME=IP_${IP_ADDRESS//\./\_}_GUID_WORKER_ID
+export GUID_WORKER_ID=$(eval echo '$'"$GUID_WORKER_ID_NAME")
+fi
+```
 
 * 获得ID
 ```
