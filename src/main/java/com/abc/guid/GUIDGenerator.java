@@ -26,9 +26,9 @@ import java.util.Random;
  * <p>
  * 环境变量可以配置以下参数：
  * 参数名          参数Key                       必需  缺省值
- * 数据中心ID      GUID_DATACENTER_ID            Yes   无
  * 机器ID          GUID_WORKER_ID                Yes   无
  * <p>
+ * 数据中心ID      GUID_DATACENTER_ID            No   0
  * 时间戳起点      GUID_START_EPOCH              No    2020-01-01 00:00:00
  * 时钟回拨阈值    GUID_CLOCK_BACK_THRESHOLD     No    50L
  * 时间戳长度      GUID_TIMESTAMP_LEN            No    41L
