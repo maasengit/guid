@@ -43,6 +43,16 @@ guid生成的ID包括6个部分：
 #4. 用法
 使用时需要为当前机器/JVM设置环境变量，UUID_WORKER_ID
 
+* maven依赖
+下载代码后本地编译打包上传到本地仓库
+```
+<dependency>
+    <groupId>com.abc</groupId>
+    <artifactId>guid</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 * 获得ID
 long id = GIDGenerator.nextId();
 
