@@ -41,7 +41,6 @@ guid生成的ID包括6个部分：
 各部分的长度可以定制：时间戳长度、数据中心长度、机器长度、时钟回拨次数长度、序列号长度，总长是63
 
 # 4. 用法
-使用时需要为当前机器/JVM设置环境变量，UUID_WORKER_ID
 
 * maven依赖
 
@@ -53,6 +52,16 @@ guid生成的ID包括6个部分：
     <version>1.0</version>
 </dependency>
 ```
+
+* 配置机器ID
+
+1. 使用时需要为当前机器/JVM设置环境变量：GUID_WORKER_ID
+
+2. 集群环境下启动时需要执行以下两个脚本文件：
+
+src/main/resources/start_guid.sh：根据IP地址设置集群里所有机器的ID
+
+src/main/resources/start.sh：集群机器启动脚本，根据本机IP地址从start_guid.sh获得机器ID设置为环境变量
 
 * 获得ID
 ```
