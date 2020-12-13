@@ -44,6 +44,7 @@ guid生成的ID包括6个部分：
 使用时需要为当前机器/JVM设置环境变量，UUID_WORKER_ID
 
 * maven依赖
+
 下载代码后本地编译打包上传到本地仓库
 ```
 <dependency>
@@ -54,10 +55,12 @@ guid生成的ID包括6个部分：
 ```
 
 * 获得ID
+```
 long id = GIDGenerator.nextId();
-
+```
 结果：113274030270189578
 * 解析ID
+```
 String str = GUIDGenerator.id2Str(113274030270189578L);
-
+```
 结果：20201108T21:50:33.346-0-1-0-10
