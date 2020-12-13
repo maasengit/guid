@@ -88,3 +88,8 @@ long id = GIDGenerator.nextId();
 String str = GUIDGenerator.id2Str(113274030270189578L);
 ```
 结果：20201108T21:50:33.346-0-1-0-10
+
+# 5. JMH测试结果
+Benchmark                                 Mode  Cnt     Score     Error   Units
+
+GUIDGeneratorBenchmarkTest.testNextId    thrpt   10  1023.263 ±   4.812  ops/ms
